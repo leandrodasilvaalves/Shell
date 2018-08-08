@@ -1,0 +1,1 @@
+exports.clients = ['asdf', 'jklç', 'qwert'];
