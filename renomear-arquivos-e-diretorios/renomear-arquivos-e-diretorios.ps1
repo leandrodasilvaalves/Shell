@@ -16,3 +16,6 @@ Get-ChildItem | Rename-Item -NewName { $_.Name.ToLower() -replace '\s', '-'}
 #Episodio-Teste-T1E01-episotio-teste
 [regex]$rx = "T\d{1}E\d{2}"
 Get-ChildItem | Rename-Item -NewName { $rx.Match($_.Name).Value + $_.Name.Substring($_.Name.Length -4)}
+
+#Outro exemplo
+ Get-ChildItem *.* -Recurse | ForEach-Object { Rename-Item -Path $_.FullName -NewName  $_.Name -replace 'Abcde.Fghijk', 'Jihgf.Edcba' }
